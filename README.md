@@ -30,5 +30,4 @@ the last one being executed in the local sources repository:
 
 `npm install`
 
-
-
+Copyright © 2013 Université d'Evry-Val d'Essonne.
