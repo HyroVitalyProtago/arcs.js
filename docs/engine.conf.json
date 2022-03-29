@@ -1,0 +1,10 @@
+{
+	"plugins": ["./sigslot.js"],
+	"source" : {
+        "include" : [ "../src", "./Readme.md" ]        
+	},
+	"opts" : {
+        "template": "./arcs",
+        "destination": "./engine"
+	}
+}

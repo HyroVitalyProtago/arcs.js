@@ -1,0 +1,45 @@
+{
+  "context" : {
+    "libraries" : [ "../example/loop.js","../example/console.js"],
+    "components" : {
+      "loop": { "type": "Loop" },
+      "dint": { "type": "DisplayInt" }, 
+      "console": { "type":"Console", "value":"output"},
+      "statemachine" : { 
+        "type": "StateMachine", 
+        "value" : { 
+          "initial": "start",  
+          "transitions" : {
+              "start" : { "end" : "start2"}
+          }
+        }
+      }
+    }
+  },
+  "controller" : "statemachine",
+  "sheets" : {
+    "start" : {    
+      "preconnections" : [],
+      "postconnections" : [
+          { "destination":"loop",  "slot":"setIterations",  "value":[4] }        
+      ],
+      "connections" : [
+          { "source":"loop",  "signal":"newIteration",  "destination":"dint",  "slot":"display" }, 
+          { "source":"loop",  "signal":"endLoop",  "destination":"statemachine",  "slot":"end" }
+      ],
+      "cleanups" : []
+    }, 
+    "start2" : {    
+      "preconnections" : [],
+      "postconnections" : [
+          { "destination":"loop",  "slot":"setIterations",  "value":[8] }        
+      ],
+      "connections" : [
+          { "source":"loop",  "signal":"newIteration",  "destination":"dint",  "slot":"display" }, 
+          { "source":"loop",  "signal":"endLoop",  "destination":"statemachine",  "slot":"end" }           
+      ],
+      "cleanups" : []
+    }
+  }
+}
+    

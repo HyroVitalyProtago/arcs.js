@@ -1,0 +1,42 @@
+{
+  "name": "arcsjs",
+  "version": "0.9.3",
+  "description": "Augmented Reality Component System in web browser and node environment",
+  "homepage": "http://arcs.ibisc.fr",
+  "repository": {
+    "type": "git",
+    "url": "https://forge.ibisc.univ-evry.fr/arcs/arcs.js.git"
+  },
+  "main": "build/arcs.js",
+  "scripts": {
+    "build": "npx webpack --config-name core",
+    "doc": "npx webpack --config-name doc",
+    "test": "npx mocha"
+  },
+  "keywords": [
+    "Augmented Reality"
+  ],
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "rules": {
+      "func-style": "off"
+    }
+  },
+  "author": "Jean-Yves Didier",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "chai": "4.3.4",
+    "copy-webpack-plugin": "^9.0.1",
+    "eslint": "^8.7.0",
+    "eslint-webpack-plugin": "^3.0.1",
+    "jsdoc-webpack-plugin": "^0.3.0",
+    "mocha": "^9.1.4",
+    "val-loader": "^4.0.0"
+  }
+}
